@@ -31,21 +31,29 @@ function App() {
             {/* <PublicRoute exact path="/signup" element={Signup} />
             <PrivateRoute exact path="/quiz" element={Quiz} /> */}
 
-            {/* <PublicRoute exact path="/signup" component={Signup} />
-            <PublicRoute exact path="/login" component={Login} />
-            <PrivateRoute exact path="/quiz" component={Quiz} />
-            <PrivateRoute exact path="/result" component={Result} /> */}
+            {/* <PublicRoute exact path="/signup" element={Signup} />
+            <PublicRoute exact path="/login" element={Login} />
+            <PrivateRoute exact path="/quiz" element={Quiz} />
+            <PrivateRoute exact path="/result" element={Result} /> */}
 
             {/* <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/quiz" component={Quiz} /> */}
             {/* <Route exact path="/result" component={Result} /> */}
+            <Route component={<PrivateRoute />}>
+              <Route element={<Quiz />} path="/quiz" exact />
+              <Route element={<Result />} path="/result" />
+            </Route>
+            <Route component={<PublicRoute />}>
+              <Route element={<Signup />} path="/signup" exact />
+              <Route element={<Login />} path="/login" />
+            </Route>
           </Routes>
-          <PublicRoute exact path="/signup" element={Signup} />
-          <PrivateRoute exact path="/quiz" element={Quiz} />
+          {/* 
+          <PrivateRoute exact path="/quiz" component={Quiz} />
           <PublicRoute exact path="/login" component={Login} />
-          <PrivateRoute exact path="/result" component={Result} />
+          <PrivateRoute exact path="/result" component={Result} /> */}
         </Layout>
       </AuthProvider>
     </Router>

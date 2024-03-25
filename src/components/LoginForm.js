@@ -21,7 +21,8 @@ export default function LoginForm() {
       setError("");
       setLoading(true);
       await login(email, password);
-      navigate.push("/");
+      // navigate.push("/");
+      navigate("/");
     } catch (err) {
       console.log(err);
       setLoading(false);
