@@ -14,6 +14,7 @@ export default function useVideoList(page) {
   const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  console.log(videos);
 
   useEffect(() => {
     async function fetchVideos() {

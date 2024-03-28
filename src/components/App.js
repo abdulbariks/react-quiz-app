@@ -41,13 +41,14 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/quiz" component={Quiz} /> */}
             {/* <Route exact path="/result" component={Result} /> */}
-            <Route component={<PrivateRoute />}>
-              <Route element={<Quiz />} path="/quiz" exact />
-              <Route element={<Result />} path="/result" />
-            </Route>
+
             <Route component={<PublicRoute />}>
               <Route element={<Signup />} path="/signup" exact />
               <Route element={<Login />} path="/login" />
+            </Route>
+            <Route component={<PrivateRoute />}>
+              <Route element={<Quiz />} path="/quiz/:id" exact />
+              <Route element={<Result />} path="/result/:id" />
             </Route>
           </Routes>
           {/* 
